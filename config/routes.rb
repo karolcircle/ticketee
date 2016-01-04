@@ -1,9 +1,9 @@
 Ticketee::Application.routes.draw do
 
 root "projects#index"
-
+post "/signin", to: "sessions#create"
 resources :users
-
+get "/signin", to: "sessions#new"
 resources :projects do
   resources :tickets
 

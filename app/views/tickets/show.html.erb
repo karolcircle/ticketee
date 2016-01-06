@@ -1,7 +1,9 @@
 <div id='ticket'>
+<span id='author'>Created by <%= @ticket.user.email %></span>
 <h2><%= @ticket.title %></h2>
+<span id='author'>Created by <%= @ticket.user.email %></span>
 <%= link_to "Edit Ticket", [:edit, @project, @ticket] %>
-
+<span id='author'>Created by <%= @ticket.user.email %></span>
 <%= simple_format(@ticket.description) %>
 </div>
 

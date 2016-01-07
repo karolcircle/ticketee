@@ -1,5 +1,9 @@
 Ticketee::Application.routes.draw do
 
+  namespace :admin do
+  resources :users
+  end
+
 root "projects#index"
 post "/signin", to: "sessions#create"
 resources :users

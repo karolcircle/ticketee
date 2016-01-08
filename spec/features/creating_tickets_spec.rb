@@ -6,6 +6,7 @@ feature "Creating Tickets" do
   before do
 project = FactoryGirl.create(:project)
 user = FactoryGirl.create(:user)
+@email = user.email
 visit '/'
 click_link project.name
 click_link "New Ticket"
@@ -40,7 +41,7 @@ end
 
 it "should have content" do
   within "#ticket #author" do
-expect(page).to have_content("Created by sample@example.com")
+expect(page).to have_content("Created by #{@email}")
 end
 end
 end
